@@ -5,8 +5,17 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     const withdrawInput = document.getElementById('withdraw-input');
     const newWithdrawString = withdrawInput.value;
     const newWithdraw = parseFloat(newWithdrawString);
-    // 3: get the current withdraw total
 
+
+    // 7: clear the withdraw field
+    withdrawInput.value = '';
+
+    if (isNaN(newWithdraw)) {
+        alert('please give a number')
+        return;
+    }
+
+    // 3: get the current withdraw total
     const withdrawAmount = document.getElementById('withdraw');
     const withdrawString = withdraw.innerText;
     const withdrawTotal = parseFloat(withdrawString);
@@ -17,9 +26,6 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     const totalBalance = document.getElementById('balance');
     const totalBalanceString = totalBalance.innerText;
     const totalBalancenumber = parseFloat(totalBalanceString);
-
-    // 7: clear the withdraw field
-    withdrawInput.value = '';
 
     if (newWithdraw > totalBalancenumber) {
         alert('Ho tor abba bank eda bahir ho sala')
